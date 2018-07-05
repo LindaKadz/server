@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'date'
 require './account'
 
 get '/' do
@@ -36,8 +37,16 @@ post '/withdraw' do
   acc = Account.new
   amount = params[:amount].to_i
   agent_number = params[:agent_number].to_i
+  transaction_cost = params[:transaction_cost].to_i
   pin = params[:pin].to_i
-  acc.withdraw(amount, agent_number, pin)
+  acc.withdraw(amount, agent_number, transaction_cost, pin)
 
-  "You have withdrawn #{amount}, your balance is #{acc.balance}"
+  "You have withdrawn #{amount}, your balance is #{acc.balance - (amount + transaction_cost)}"
+end
+
+get '/balance' do
+  acc = Account.new
+  amount = params[:amount].to_i
+  acc.balance
+  "Your current balance is #{acc.balance}"
 end
