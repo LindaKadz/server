@@ -23,17 +23,26 @@ get '/deposit/:amount' do
 end
 
 get '/deposit' do
+    @name= "linda"
+  erb :deposit
+end
+
+post '/deposit' do
   acc = Account.new
   amount = params[:amount].to_i
   acc.deposit(amount)
-  "Your new balance is #{acc.balance}"
+  @balance= "Your balance is #{acc.balance}"
+  #erb :balance
+
 end
 
 get '/withdraw' do
+    @name= "linda"
   erb :withdraw
 end
 
 post '/withdraw' do
+
   acc = Account.new
   amount = params[:amount].to_i
   agent_number = params[:agent_number].to_i
@@ -41,12 +50,12 @@ post '/withdraw' do
   pin = params[:pin].to_i
   acc.withdraw(amount, agent_number, transaction_cost, pin)
 
-  "You have withdrawn #{amount}, your balance is #{acc.balance - (amount + transaction_cost)}"
+
 end
 
 get '/balance' do
-  acc = Account.new
-  amount = params[:amount].to_i
-  acc.balance
-  "Your current balance is #{acc.balance}"
+     acc= Account.new
+    @name= "linda"
+    @balance= acc.balance
+  erb :balance
 end

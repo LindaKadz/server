@@ -1,9 +1,10 @@
 <!DOCTYPE>
 <html>
 <head>
-
+<title>Withdraw</title>
 </head>
 <body>
+  <h3> Welcome <%=@name%> </h3>
   <h2>Withdraw</h2>
   <form method="post" action="/withdraw">
     Agent Number: <br>
@@ -28,6 +29,10 @@
 <h2> Balance </h2>
   <form method="get" action="/balance">
     Check your balance <br>
+    Pin: <br>
+    <input type="password" name="pin">
+    <br>
+    <br>
     <input type="submit" name="check balance">
   </form>
 
