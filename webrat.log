@@ -1,0 +1,6 @@
+# Logfile created on 2018-07-06 14:41:56 +0300 by logger.rb/56815
+D, [2018-07-06T14:41:56.147902 #18047] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2018-07-06T14:49:28.790276 #18126] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2018-07-06T14:54:40.334308 #18194] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2018-07-06T14:59:25.590334 #18339] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2018-07-06T15:18:39.692713 #18886] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
