@@ -3,7 +3,7 @@ require 'date'
 require './account'
 
 get '/' do
-  'Hello World!'
+  erb :general
 end
 
 get '/linda' do
@@ -24,7 +24,7 @@ end
 
 get '/deposit' do
     @name= "linda"
-  erb :deposit
+    erb :deposit
 end
 
 post '/deposit' do
@@ -46,9 +46,8 @@ post '/withdraw' do
   acc = Account.new
   amount = params[:amount].to_i
   agent_number = params[:agent_number].to_i
-  transaction_cost = params[:transaction_cost].to_i
   pin = params[:pin].to_i
-  acc.withdraw(amount, agent_number, transaction_cost, pin)
+  acc.withdraw(amount, agent_number, pin)
 
 
 end

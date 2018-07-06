@@ -9,7 +9,7 @@ def initialize
   @pin= 1234
 end
 
-def withdraw(amount, agent_number, pin, transaction_cost)
+def withdraw(amount, agent_number, pin)
  return 'Failed, wrong agent number' unless agent_number_exist(agent_number)
  return 'Wrong PIN' unless @pin == pin
 
@@ -17,8 +17,8 @@ def withdraw(amount, agent_number, pin, transaction_cost)
    	{balance: @balance , time: @date , status: false}
 
   else
-    @balance -= (amount + transaction_cost)
-    { transactioncode: 'WRXP45P', balance: @balance ,amount: 200 , time: @date , transaction_cost: 10, status: true }
+    @balance -= (amount)
+    { transactioncode: 'WRXP45P', balance: @balance ,amount: 200 , time: @date , status: true }
   end
 end
 
