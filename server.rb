@@ -1,6 +1,11 @@
 require 'sinatra'
-require 'date'
 require './account'
+require 'sinatra/activerecord'
+
+ActiveRecord::Base.establish_connection(
+ :adapter => 'sqlite3',
+ :database => 'tkash.sqlite3'
+ )
 
 get '/' do
   erb :general
