@@ -1,6 +1,6 @@
 require 'sinatra'
 require './account'
-require 'sinatra/activerecord'
+require 'sinatra-activerecord'
 
 ActiveRecord::Base.establish_connection(
  :adapter => 'sqlite3',
